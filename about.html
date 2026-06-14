@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파과 - About</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .about-container {
+            max-width: 850px;
+            margin: 220px auto 200px auto; /* 상하 외부 여백 추가 확대 */
+            padding: 0 20px;
+        }
+        
+        /* 🎯 마이크로사이트 기획 소개 섹션 */
+        .site-intro-box {
+            background-color: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 50px; /* 내부 여백 확대 */
+            border-radius: 4px;
+            margin-bottom: 140px; /* 섹션 간격 확대 */
+        }
+        .site-intro-box p {
+            font-size: 15.5px;
+            color: #dddddd;
+            line-height: 2.2; /* 행간 확대 */
+            word-break: keep-all;
+            margin: 0;
+        }
+
+        /* 👤 작가 프로필 섹션 */
+        .author-profile {
+            display: flex;
+            gap: 60px; /* 사진과 정보 영역 간격 확대 */
+            align-items: flex-start;
+            border-bottom: 1px solid #222;
+            padding-bottom: 80px;
+            margin-bottom: 140px; /* 섹션 간격 확대 */
+        }
+        .author-img {
+            width: 240px;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+        .author-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* 프로필 내부 블록 간 여백 확대 */
+        }
+        .author-name-wrap {
+            margin-bottom: -10px;
+        }
+        .author-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+        .author-job {
+            font-size: 16px;
+            color: #e50914;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        
+        /* 테이블 스타일 */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-table th, .info-table td {
+            text-align: left;
+            padding: 10px 0; /* 행 간격 확대 */
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .info-table th {
+            width: 90px;
+            color: #888;
+            font-weight: normal;
+        }
+        .info-table td {
+            color: #fff;
+        }
+        
+        /* 프로필 내 미니 타이틀 */
+        .profile-sub-title {
+            font-size: 14px;
+            color: #e50914;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+        }
+
+        /* 대타이틀 여백 대폭 확대 */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 150px 0 45px 0; /* 상단 여백을 넓혀 호흡을 길게 가져감 */
+            letter-spacing: 1px;
+            border-left: 3px solid #e50914;
+            padding-left: 12px;
+        }
+        
+        /* 📚 도서 및 영화 정보 레이아웃 */
+        .info-media-block {
+            display: flex;
+            gap: 50px; /* 이미지와 텍스트 사이 간격 확대 */
+            align-items: flex-start;
+        }
+        .media-poster {
+            width: 190px; /* 포스터 크기 미세 조정 */
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+        }
+        .media-desc {
+            flex: 1;
+        }
+        .media-desc h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+        .media-desc p {
+            font-size: 15px;
+            color: #cccccc;
+            line-height: 1.95;
+            word-break: keep-all;
+            margin: 0;
+        }
+
+        /* 🎬 비디오 플레이어 컨테이너 */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body style="background-color: #000000; color: #ffffff;">
+
+<nav class="top-nav" style="position: fixed; top: 0; left: 0; width: 100%; padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); box-sizing: border-box;">
+    <div class="logo">
+        <a href="index.html" style="font-size: 24px; font-weight: 700; letter-spacing: 2px; color: #ffffff; text-decoration: none;">파과</a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html" class="active" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #e50914; font-weight: bold; transition: color 0.3s;">STORY</a>
+        <a href="character.html" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">CHARACTER</a>
+        <a href="about.html" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">ABOUT</a>
+        <a href="https://product.kyobobook.co.kr/detail/S000001808685" target="_blank" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">BUY</a>
+    </div>
+</nav>
+
+    <main class="about-container">
+        
+        <h2 class="section-title" style="margin-top: 0;">사이트 소개</h2>
+        <section class="site-intro-box">
+            <p>
+              파과는 냉철한 60대 킬러에게 피어나는 연민과 공감을 다루는 책이다. 이 책은 강자도 피할 수 없는 노화와 쇠퇴에 대한 문제의식에서 출발해, 노화는 단순한 쇠퇴가 아니라 인간을 변화시키고 타인과 연결시키는 과정임을 제시한다. 특히 노화, 쇠퇴, 인간성 회복을 중심으로 독자가 언젠가 모두가 마주하게 될 변화와 인간다움에 대해 생각하게 한다.
+        </p>
+        <p>
+            이 마이크로사이트는 책의 핵심 메시지인 냉철한 60대 킬러에게도 찾아오는 노화와 그 속에서 피어나는 연민과 공감을 사용자가 스크롤을 통해 경험하도록 설계한다. 이를 위해 세로 스크롤 중심의 화면 구조, 최소한의 정보 배치와 여백 중심 레이아웃, 검은 배경과 날카로운 세리프 서체, 스크롤에 따라 이미지와 텍스트가 흐려지고 사라지는 효과를 중심으로 디자인한다. 특히 점차 사라지는 이미지와 텍스트 효과는 주인공의 노화 과정을 표현하기 위한 선택이다. 사용자가 이 사이트를 통해 시간이 지나며 변화하는 몸과 감정을 경험하고, 주인공의 감정과 상황에 몰입하도록 하는 것이 목표다.
+            </p>
+        </section>
+
+        <h2 class="section-title">작가 소개</h2>
+        <section class="author-profile">
+            <img src="at.png" alt="구병모 작가" class="author-img">
+            
+            <div class="author-info">
+                <div class="author-name-wrap">
+                    <h1 class="author-name">구병모</h1>
+                    <p class="author-job">소설가</p>
+                </div>
+                
+                <div>
+                    <table class="info-table">
+                        <tr>
+                            <th>출생</th>
+                            <td>1976년, 서울특별시</td>
+                        </tr>
+                        <tr>
+                            <th>학력</th>
+                            <td>경희대학교 국어국문학 학사</td>
+                        </tr>
+                        <tr>
+                            <th>데뷔</th>
+                            <td>2009년 소설 '위저드 베이커리'</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3 class="profile-sub-title">Awards</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th>2022년</th>
+                            <td>제16회 김유정문학상</td>
+                        </tr>
+                        <tr>
+                            <th>2008년</th>
+                            <td>제2회 창비청소년문학상 (위저드 베이커리)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 140px;">
+            <h2 class="section-title">북트레일러</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/7oLS6i0HBwE?rel=0" title="파과 북트레일러" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">원작 도서 정보</h2>
+            <div class="info-media-block" style="margin-bottom: 140px;">
+                <img src="book.jpg" alt="파과 소설 표지" class="media-poster">
+                <div class="media-desc">
+                    <h3>소설 『파과』 <span>(구병모 저)</span></h3>
+                    <p>
+                        2013년 출간 이후 독자들의 압도적인 찬사를 받은 구병모 작가의 대표작. 
+                        빛나는 서사와 강렬한 미문으로 65세 여성 킬러 '조각'의 무너져가는 몸과 
+                        그 안에서 새롭게 피어나는 연민의 감정을 섬세하게 그려냈습니다. 
+                        소멸의 눈부신 아름다움을 담아낸 한국 문학의 독보적인 서사시입니다.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="section-title">영화 정보</h2>
+            <div class="info-media-block" style="margin-bottom: 40px;">
+                <img src="common-13.jpeg" alt="파과 영화 포스터" class="media-poster">
+                <div class="media-desc">
+                    <h3>영화 『파과』</h3>
+                    <p>
+                        구병모 작가의 동명 소설을 원작으로 하여 스크린으로 옮겨온 시네마틱 마스터피스. 
+                        원작 특유의 차갑고도 뜨거운 미학적 액션과 인물들의 깊이 있는 내면을 
+                        감각적인 영상미와 묵직한 연출로 담아내어 평단과 관객의 큰 호평을 받았습니다.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/J1N2aR9Nkj4?rel=0" title="파과 영화 예고편" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

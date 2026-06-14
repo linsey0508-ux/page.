@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파과 - Character</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .char-container {
+            max-width: 1100px;
+            margin: 160px auto 100px auto;
+            padding: 0 40px;
+        }
+        .char-section {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+        .char-section.reverse {
+            flex-direction: row-reverse;
+        }
+        .char-img-box {
+            flex: 1;
+            max-width: 450px;
+        }
+        .char-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .char-text-box {
+            flex: 1.2;
+        }
+    </style>
+</head>
+<body style="background-color: #000000; color: #ffffff;">
+
+   <nav class="top-nav" style="position: fixed; top: 0; left: 0; width: 100%; padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); box-sizing: border-box;">
+    <div class="logo">
+        <a href="index.html" style="font-size: 24px; font-weight: 700; letter-spacing: 2px; color: #ffffff; text-decoration: none;">파과</a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html" class="active" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #e50914; font-weight: bold; transition: color 0.3s;">STORY</a>
+        <a href="character.html" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">CHARACTER</a>
+        <a href="about.html" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">ABOUT</a>
+        <a href="https://product.kyobobook.co.kr/detail/S000001808685" target="_blank" style="font-size: 14px; margin-left: 40px; letter-spacing: 1px; text-decoration: none; color: #ffffff; transition: color 0.3s;">BUY</a>
+    </div>
+</nav>
+
+    <main class="char-container">
+        
+        <section class="char-section">
+            <div class="char-img-box">
+                <img src="ch-z.jpg" alt="조각">
+            </div>
+            <div class="char-text-box">
+                <span class="char-tag" style="font-size: 14px; color: #e50914; letter-spacing: 2px; font-weight: bold;">CHARACTER 01</span>
+                <h2 style="font-size: 32px; color: #ffffff; margin: 10px 0 20px 0; font-weight: 700;">조각 <span style="font-size: 18px; color: #aaaaaa; font-weight: normal; margin-left: 10px;">｜ 65세, 베테랑 킬러</span></h2>
+                <p style="font-size: 16.5px; color: #e0e0e0; line-height: 1.9; word-break: keep-all;">
+                    40년간 단 한 번의 실패도 없이 의뢰를 처리해 온 청부살인업자. 세월의 흐름 속에 몸이 무뎌짐을 느끼던 중, 키우던 노견 '무용'와 강 박사의 가족을 통해 평생 느껴보지 못한 타인을 향한 연민과 '지키고 싶은 마음'을 품게 되며 혼란을 겪습니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="char-section reverse">
+            <div class="char-img-box">
+                <img src="ch-t.jpg" alt="투우">
+            </div>
+            <div class="char-text-box">
+                <span class="char-tag" style="font-size: 14px; color: #e50914; letter-spacing: 2px; font-weight: bold;">CHARACTER 02</span>
+                <h2 style="font-size: 32px; color: #ffffff; margin: 10px 0 20px 0; font-weight: 700;">투우 <span style="font-size: 18px; color: #aaaaaa; font-weight: normal; margin-left: 10px;">｜ 30대, 젊은 킬러</span></h2>
+                <p style="font-size: 16.5px; color: #e5e5e5; line-height: 1.9; word-break: keep-all;">
+                    과거 조각과의 기묘한 인연을 가슴에 품고 살아온 인물. 뛰어난 실력을 갖춘 젊은 킬러로, 늙고 병들어가는 조각의 주변을 맴돌며 예리하게 도발합니다. 조각이 새로이 가지게 된 소중한 것들을 위협하며 그녀를 마지막 한계까지 몰아넣는 인물입니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="char-section" style="margin-bottom: 50px;">
+            <div class="char-img-box">
+                <img src="ch-k.jpg" alt="강 박사">
+            </div>
+            <div class="char-text-box">
+                <span class="char-tag" style="font-size: 14px; color: #e50914; letter-spacing: 2px; font-weight: bold;">CHARACTER 03</span>
+                <h2 style="font-size: 32px; color: #ffffff; margin: 10px 0 20px 0; font-weight: 700;">강 박사 <span style="font-size: 18px; color: #aaaaaa; font-weight: normal; margin-left: 10px;">｜ 30대 의사</span></h2>
+                <p style="font-size: 16.5px; color: #e0e0e0; line-height: 1.9; word-break: keep-all;">
+                    부상당한 조각을 치료해 준 것을 인연으로 그녀의 삶에 스며든 의사. 그의 따뜻한 가족과 어린 딸의 존재는 냉혹했던 조각의 내면에 커다란 균열과 변화를 일으키는 불씨가 됩니다.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
