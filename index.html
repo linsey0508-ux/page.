@@ -4,134 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파과 - Story</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* 🖤 기본 스타일 및 여백 중심 레이아웃 */
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-family: 'Nanum Myeongjo', serif;
-            overflow-x: hidden;
-        }
-
-        /* 📌 상단 고정 메뉴 바 (절대 사라지지 않도록 배경색을 검은색으로 완전히 고정) */
-        .top-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 25px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10000; /* 최상단에 노출 */
-            background-color: #000000; /* 다른 요소와 겹쳐서 안 보이지 않도록 불투명 처리 */
-            border-bottom: 1px solid #111;
-            box-sizing: border-box;
-        }
-        .logo a {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .nav-links a {
-            font-size: 14px;
-            margin-left: 40px;
-            letter-spacing: 1px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: #e50914;
-        }
-
-        /* 스크롤 가이드 */
-        .scroll-guide {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: #444;
-            z-index: 10;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.3; }
-            50% { opacity: 1; }
-            100% { opacity: 0.3; }
-        }
-
-        /* 스크롤 페이드 섹션 공통 스타일 */
-        .chapter-section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 220px 20px; /* 긴 호흡을 위한 상하 여백 */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 50vh;
-            will-change: opacity, filter;
-            transition: opacity 0.4s ease-out, filter 0.4s ease-out;
-        }
-
-        .chapter-num {
-            font-size: 13px;
-            color: #e50914;
-            letter-spacing: 4px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .chapter-title {
-            font-size: 30px;
-            font-weight: 700;
-            margin: 0 0 60px 0;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-        .chapter-desc {
-            font-size: 16px;
-            line-height: 2.2;
-            color: #cccccc;
-            word-break: keep-all;
-            text-align: justify;
-            margin: 0;
-            padding: 0 10px;
-        }
-        .chapter-desc p {
-            margin: 0 0 35px 0; /* 문단 사이 완벽한 엔터(공백) 부여 */
-        }
-        .chapter-desc p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* 이미지 컨테이너 */
-        .chapter-img-wrap {
-            width: 100%;
-            margin: 20px 0 60px 0;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-        }
-        .chapter-img-wrap img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 2px;
-        }
-    </style>
 </head>
-<body>
+<body class="story-body">
 
-    <nav class="top-nav">
-        <div class="logo">
-            <a href="index.html">파과</a>
+    <header class="intro-cover">
+        <div class="cover-bg"></div> 
+        <div class="logo-wrap">
+            <h1 class="main-title" id="brokenTitle">파과</h1>
         </div>
+        <div class="scroll-arrow">
+            <p>스크롤해서 이야기로</p>
+            <div class="arrow-icon">↓</div>
+        </div>
+    </header>
+
+    <nav class="top-nav" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="cursor: pointer;">
+        <div class="logo">파과</div>
         <div class="nav-links">
             <a href="index.html" class="active">STORY</a>
             <a href="character.html">CHARACTER</a>
@@ -140,90 +30,173 @@
         </div>
     </nav>
 
-    <div class="scroll-guide">SCROLL DOWN</div>
+    <nav class="side-nav">
+        <a href="#chapter1">1</a>
+        <a href="#chapter2">2</a>
+        <a href="#chapter3">3</a>
+        <a href="#chapter4">4</a>
+        <a href="#chapter5">5</a>
+    </nav>
 
-    <main style="padding-top: 120px;">
+    <main class="story-container">
+        
+        <section id="chapter1" class="story-panel cinematic-chapter">
+            <span class="chapter-num">CHAPTER 1</span>
+            <h2>조각</h2>
 
-        <section class="chapter-section" id="chapter1">
-            <span class="chapter-num">CHAPTER 01</span>
-            <h2 class="chapter-title">소멸의 서막</h2>
-            <div class="chapter-desc">
-                <p>마흔 해 가까이 청부살인, 혹은 방역이라 불리는 업을 이어온 예순다섯의 노년 여성 조각. 한때는 흔적조차 남기지 않던 날카로운 칼날이었으나, 흐르는 세월 앞에 육체는 조금씩 부서지고 무뎌져 간다. 차가운 얼음 같았던 그녀의 일상에 어느 날부터인가 낯선 균열이 발생하기 시작한다.</p>
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene1-1.jpg" alt="장면 1-1">
+                <div class="text-box"><p>60대 여성 킬러 조각.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene1-2.jpg" alt="장면 1-2">
+                <div class="text-box"><p>그녀는 냉철하고 노련한 업계의 대모다.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene1-3.jpg" alt="장면 1-3">
+                <div class="text-box"><p>수많은 세월 동안 단 한 번의 오차도 없이 의뢰를 처리해 온 그녀.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene1-4.jpeg" alt="장면 1-4">
+                <div class="text-box"><p>하지만 흐르는 시간 속에서 그녀의 칼날도 조금씩 무뎌지기 시작한다.</p></div>
             </div>
         </section>
 
-        <section class="chapter-section" id="chapter2">
-            <span class="chapter-num">CHAPTER 02</span>
-            <h2 class="chapter-title">기억의 얼룩</h2>
-            <div class="chapter-desc">
-                <p>지워지지 않는 과거의 잔상들이 불쑥불쑥 조각의 발목을 잡는다. 젊고 냉혹했던 시절의 기억, 그리고 그녀를 이 어둠의 세계로 이끌었던 스승 ‘류’와의 강렬했던 순간들. 사라져가는 기억의 파편을 붙잡으려는 순간, 현실의 심장도 미세하게 떨려온다.</p>
+        <section id="chapter2" class="story-panel cinematic-chapter">
+            <span class="chapter-num">CHAPTER 2</span>
+            <h2>투우의 등장</h2>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene2-1.jpg" alt="장면 2-1">
+                <div class="text-box"><p>조각의 곁을 맴돌며 예리하게 숨통을 조여오는 새로운 인물.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene2-2.jpg" alt="장면 2-2">
+                <div class="text-box"><p>숨 막히는 긴장감 속에서 조각에게 자꾸만 시비를 거는 투우.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene2-3.jpeg" alt="장면 2-3">
+                <div class="text-box"><p>그의 도발은 단순한 장난이 아닌, 거대한 폭풍의 전조였다.</p></div>
             </div>
         </section>
 
-        <section class="chapter-section" id="chapter3">
-            <span class="chapter-num">CHAPTER 03</span>
-            <h2 class="chapter-title">낯선 연민</h2>
-            <div class="chapter-desc">
-                <p>단 한 번도 타인의 삶에 개입하거나 감정을 낭비해 본 적 없던 조각의 삶에, 한 가족이 들어온다. 상처 입은 평범한 이들을 마주한 순간, 그녀의 마음속 깊은 곳에 묻어두었던 연민과 공감이라는 감정이 마치 서리 맞은 과일처럼 시리게 피어오르기 시작한다.</p>
+        <section id="chapter3" class="story-panel cinematic-chapter">
+            <span class="chapter-num">CHAPTER 3</span>
+            <h2>조각의 부상 그리고 강 박사와의 만남</h2>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene3-1.jpg" alt="장면 3-1">
+                <div class="text-box"><p>노화로 인해 이전 같지 않은 몸. 한순간의 실수로 조각은 치명적인 부상을 입고 의식을 잃은 채 강 박사의 병원으로 실려 온다.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene3-2.jpg" alt="장면 3-2">
+                <div class="text-box"><p>정신이 들자마자 킬러로서의 본능적인 방어기제와 극도의 경계심으로 눈앞의 강 박사를 거칠게 몰아붙이는 조각.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene3-3.jpg" alt="장면 3-3">
+                <div class="text-box"><p>차가운 무기를 목에 겨눈 숨 막히는 대치 속에서, 두 사람의 기묘하고도 위태로운 인연이 시작된다.</p></div>
             </div>
         </section>
 
-        <section class="chapter-section" id="chapter4">
-            <span class="chapter-num">CHAPTER 04</span>
-            <h2 class="chapter-title">젊은 추격자</h2>
-            <div class="chapter-desc">
-                <p>조각의 뒤를 쫓는 젊고 잔혹한 청부업자 ‘투우’. 그는 조각이 가진 과거의 그림자이자, 늙어버린 세대를 밀어내려는 무자비한 시간의 상징이다. 숨 막히는 긴장감 속에서 두 대립하는 존재의 거리는 서서히 좁혀져만 간다.</p>
+        <section id="chapter4" class="story-panel cinematic-chapter">
+            <span class="chapter-num">CHAPTER 4</span>
+            <h2>지키고 싶은 것들이 생긴 조각</h2>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene4-1.jpg" alt="딸을 품에 안은 강 박사">
+                <div class="text-box"><p>늘 피와 어둠뿐이었던 조각의 삶 속에, 하나뿐인 어린 딸을 품에 소중히 안아 지켜내는 강 박사의 따뜻하고 무해한 일상이 들어오기 시작한다.</p></div>
+            </div>
+
+            <div class="scene-wrap dynamic-blur">
+                <img src="scene4-2.jpg" alt="차 안에서 웃는 강 박사와 딸">
+                <div class="text-box"><p>그들 부녀가 함께 나누는 따스한 미소와 평화를 곁에서 지켜보며, 조각은 평생 느껴보지 못한 감정의 일렁임을 겪는다. 쇠잔해져 가던 킬러의 마음속에 처음으로 '파괴'가 아닌 '지키고 싶은 마음'이 태어난 순간이었다.</p></div>
             </div>
         </section>
 
-        <section class="chapter-section" id="chapter5">
-            <span class="chapter-num">CHAPTER 05</span>
-            <h2 class="chapter-title">투쟁 혹은 소멸</h2>
-            
-            <div class="chapter-img-wrap">
-                <img src="chapter5-still.jpg" alt="파과 챕터 5 액션 스틸컷">
-            </div>
-
-            <div class="chapter-desc">
-                <p>
-                    파과는 냉철한 60대 킬러에게 피어나는 연민과 공감을 다루는 책이다. 이 책은 강자도 피할 수 없는 노화와 쇠퇴에 대한 문제의식에서 출발해, 노화는 단순한 쇠퇴가 아니라 인간을 변화시키고 타인과 연결시키는 과정임을 제시한다. 특히 노화, 쇠퇴, 인간성 회복을 중심으로 독자가 언젠가 모두가 마주하게 될 변화와 인간다움에 대해 생각하게 한다.
-                </p>
-                <p>
-                    이 마이크로사이트는 책의 핵심 메시지인 냉철한 60대 킬러에게도 찾아오는 노화와 그 속에서 피어나는 연민과 공감을 사용자가 스크롤을 통해 경험하도록 설계한다. 이를 위해 세로 스크롤 중심의 화면 구조, 최소한의 정보 배치와 여백 중심 레이아웃, 검은 배경과 날카로운 세리프 서체, 스크롤에 따라 이미지 텍스트가 흐려지고 사라지는 효과를 중심으로 디자인한다. 특히 점차 사라지는 이미지와 텍스트 효과는 주인공의 노화 과정을 표현하기 위한 선택이다. 사용자가 이 사이트를 통해 시간이 지나며 변화하는 몸과 감정을 경험하고, 주인공의 감정과 상황에 몰입하도록 하는 것이 목표다.
-                </p>
+        <section id="chapter5" class="story-panel">
+            <span class="chapter-num">CHAPTER 5</span>
+            <h2>소중한 것들을 지키기 위한 마지막 혈투</h2>
+            <div class="scene-wrap dynamic-blur">
+                <img src="chapter5-still.png" alt="파과 챕터 5 액션 스틸컷">
+                <div class="text-box"><p>강박사의 딸을 지키기 위한 조각과 그녀를 방해하려는 투우의 마지막 혈투가 시작된다.</p></div>
             </div>
         </section>
-
     </main>
 
     <script>
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.chapter-section');
-            const windowHeight = window.innerHeight;
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const sectionCenter = rect.top + rect.height / 2;
-                const viewCenter = windowHeight / 2;
-
-                const distanceFromCenter = Math.abs(viewCenter - sectionCenter);
-                const maxDistance = windowHeight * 0.8; 
-
-                // 화면 중앙 영역에 머물 때는 선명하게, 멀어질 때만 자연스럽게 페이드 아웃
-                let opacity = 1 - (distanceFromCenter / maxDistance);
-                let blur = (distanceFromCenter / maxDistance) * 6; 
-
-                if (opacity < 0.1) opacity = 0.1; // 아예 영원히 투명해져서 안 보이는 현상 방지 최소치 설정
-                if (opacity > 1) opacity = 1;
-                if (blur < 0) blur = 0;
-
-                section.style.opacity = opacity;
-                section.style.filter = `blur(${blur}px)`;
-            });
+        const brokenTitle = document.getElementById('brokenTitle');
+        const topNav = document.querySelector('.top-nav');
+        
+        window.addEventListener('scroll', () => {
+            let scrollPos = window.scrollY;
+            let windowHeight = window.innerHeight;
+            let ratio = scrollPos / (windowHeight * 0.7);
+            if (ratio > 1) ratio = 1;
+            
+            brokenTitle.style.opacity = 1 - ratio;
+            brokenTitle.style.letterSpacing = `${ratio * 50}px`;
+            brokenTitle.style.filter = `blur(${ratio * 10}px)`;
+            
+            if (scrollPos > windowHeight * 0.3) {
+                topNav.classList.add('visible');
+            } else {
+                topNav.classList.remove('visible');
+            }
         });
 
-        window.dispatchEvent(new Event('scroll'));
+        const blurElements = document.querySelectorAll('.dynamic-blur');
+        
+        function checkCenterBlur() {
+            const windowHeight = window.innerHeight;
+            const contentStart = windowHeight * 0.15;
+            const contentEnd = windowHeight * 0.75;
+            
+            blurElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const elCenter = rect.top + (rect.height / 2);
+                
+                let blurAmount = 0;
+                let opacityAmount = 1;
+                
+                if (elCenter < contentStart) {
+                    const distanceFromTopZone = contentStart - elCenter;
+                    blurAmount = (distanceFromTopZone / (windowHeight * 0.2)) * 15;
+                    opacityAmount = 1 - (distanceFromTopZone / (windowHeight * 0.2)) * 2.0;
+                } else if (elCenter > contentEnd) {
+                    const distanceFromBottomZone = elCenter - contentEnd;
+                    blurAmount = (distanceFromBottomZone / (windowHeight * 0.25)) * 12;
+                    opacityAmount = 1 - (distanceFromBottomZone / (windowHeight * 0.25)) * 1.5;
+                }
+                
+                if (opacityAmount < 0) opacityAmount = 0;
+                if (opacityAmount > 1) opacityAmount = 1;
+                if (blurAmount < 0) blurAmount = 0;
+                if (blurAmount > 12) blurAmount = 12;
+                
+                const img = el.querySelector('img');
+                const text = el.querySelector('.text-box');
+                
+                if (img) {
+                    img.style.filter = `blur(${blurAmount}px)`;
+                    img.style.opacity = opacityAmount;
+                }
+                if (text) {
+                    text.style.filter = `blur(${blurAmount}px)`;
+                    text.style.opacity = opacityAmount;
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkCenterBlur);
+        window.addEventListener('resize', checkCenterBlur);
+        checkCenterBlur();
     </script>
-
 </body>
 </html>
