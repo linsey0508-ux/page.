@@ -6,13 +6,25 @@
     <title>파과 - Story</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 🎨 기존 모든 흰색 글씨 색상을 #f4f4f4로 변경 (기존 active 메뉴 스타일 등은 보존) */
+        body, h1, h2, .logo, .logo a, .nav-links a:not(.active), .side-nav a, .text-box p, .scroll-arrow p {
+            color: #c4c4c4 !important;
+        }
+     /* ✍️ 메뉴 바('파과' 로고 및 링크 전체) 서체를 더 두껍게 고정 */
+        .top-nav, .logo, .logo a, .nav-links a {
+            font-weight: 700 !important;
+        }
+    </style>
 </head>
 <body class="story-body">
 
     <header class="intro-cover">
         <div class="cover-bg"></div> 
-        <div class="logo-wrap">
+        <div class="logo-wrap" style="text-align: center;">
             <h1 class="main-title" id="brokenTitle">파과</h1>
+            <!-- ✍️ 로고 바로 아래에 추가된 부제 문구 -->
+            <p id="mainSubtitle" style="font-size: 16px; color: #c4c4c4; margin: 25px 0 0 0; letter-spacing: 2px; font-weight: 400; word-break: keep-all;">지키고 싶은 것이 생긴 냉철한 60대 킬러의 이야기</p>
         </div>
         <div class="scroll-arrow">
             <p>스크롤해서 이야기로</p>
@@ -20,8 +32,8 @@
         </div>
     </header>
 
-    <nav class="top-nav" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="cursor: pointer;">
-        <div class="logo">파과</div>
+    <nav class="top-nav visible" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="cursor: pointer;">
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">파과</a></div>
         <div class="nav-links">
             <a href="index.html" class="active">STORY</a>
             <a href="character.html">CHARACTER</a>
@@ -40,23 +52,35 @@
 
     <main class="story-container">
         
+        <!-- 시작 화면에서 살짝 스크롤 했을 때 나타나는 기획 의도 및 도서 소개글 -->
+        <div class="scene-wrap dynamic-blur" style="margin: 120px auto 200px auto; max-width: 720px; padding: 0 20px; display: flex; justify-content: center;">
+            <div class="text-box" style="position: relative !important; transform: none !important; top: auto !important; left: auto !important; background: none !important; padding: 0 !important; width: 100% !important; text-align: justify;">
+                <p style="font-size: 16.5px; line-height: 2.2; color: #f4f4f4; margin: 0 0 40px 0; word-break: keep-all;">
+                    파과는 냉철한 60대 킬러에게 피어나는 연민과 공감을 다루는 책이다. 이 책은 강자도 피할 수 없는 노화와 쇠퇴에 대한 문제의식에서 출발해, 노화는 단순한 쇠퇴가 아니라 인간을 변화시키고 타인과 연결시키는 과정임을 제시한다. 특히 노화, 쇠퇴, 인간성 회복을 중심으로 독자가 언젠가 모두가 마주하게 될 변화와 인간다움에 대해 생각하게 한다.
+                </p>
+                <p style="font-size: 16.5px; line-height: 2.2; color: #f4f4f4; margin: 0; word-break: keep-all;">
+                    이 마이크로사이트는 책의 핵심 메시지인 냉철한 60대 킬러에게도 찾아오는 노화와 그 속에서 피어나는 연민과 공감을 사용자가 스크롤을 통해 경험하도록 설계한다. 이를 위해 세로 스크롤 중심의 화면 구조, 최소한의 정보 배치와 여백 중심 레이아웃, 검은 배경과 날카로운 세리프 서체, 스크롤에 따라 이미지와 텍스트가 흐려지고 사라지는 효과를 중심으로 디자인한다. 특히 점차 사라지는 이미지와 텍스트 효과는 주인공의 노화 과정을 표현하기 위한 선택이다. 사용자가 이 사이트를 통해 시간이 지나며 변화하는 몸과 감정을 경험하고, 주인공의 감정과 상황에 몰입하도록 하는 것이 목표다.
+                </p>
+            </div>
+        </div>
+        
         <section id="chapter1" class="story-panel cinematic-chapter">
             <span class="chapter-num">CHAPTER 1</span>
             <h2>조각</h2>
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene1-1.jpg" alt="장면 1-1">
-                <div class="text-box"><p>60대 여성 킬러 조각.</p></div>
+                <div class="text-box"><p>지하철 안, 난동을 부리는 남성이 있어도 힘없이 노약자석에 앉아 눈길한번 주지 않는 이 여성은 60대 여성 킬러 조각이다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene1-2.jpg" alt="장면 1-2">
-                <div class="text-box"><p>그녀는 냉철하고 노련한 업계의 대모다.</p></div>
+                <div class="text-box"><p>그녀는 냉철하고 노련한 업계의 대모다. 그녀의 이번 타겟은 난동을 부리던 바로 그 남성이다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene1-3.jpg" alt="장면 1-3">
-                <div class="text-box"><p>수많은 세월 동안 단 한 번의 오차도 없이 의뢰를 처리해 온 그녀.</p></div>
+                <div class="text-box"><p>수많은 세월 동안 단 한 번의 오차도 없이 의뢰를 처리해 온 그녀. 이번에도 노련하고 깔끔하게 처리에 성공한다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
@@ -71,12 +95,12 @@
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene2-1.jpg" alt="장면 2-1">
-                <div class="text-box"><p>조각의 곁을 맴돌며 예리하게 숨통을 조여오는 새로운 인물.</p></div>
+                <div class="text-box"><p>조각의 곁을 맴돌며 예리하게 숨통을 조여오는 새로운 인물, 투우. 그는 30대 신입 킬러이다. 하지만 뛰어난 실력으로 업계에서 현재 가장 인정받고 있는 인물이기도 하다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene2-2.jpg" alt="장면 2-2">
-                <div class="text-box"><p>숨 막히는 긴장감 속에서 조각에게 자꾸만 시비를 거는 투우.</p></div>
+                <div class="text-box"><p>숨 막히는 긴장감 속에서 조각에게 자꾸만 시비를 거는 투우. 업계에서도 대모님이라 불리는 조각에게 그는 항상 도발한다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
@@ -91,7 +115,7 @@
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene3-1.jpg" alt="장면 3-1">
-                <div class="text-box"><p>노화로 인해 이전 같지 않은 몸. 한순간의 실수로 조각은 치명적인 부상을 입고 의식을 잃은 채 강 박사의 병원으로 실려 온다.</p></div>
+                <div class="text-box"><p>노화로 인해 이전 같지 않은 몸. 한순간의 실수로 조각은 치명적인 부상을 입고 의식을 잃어가는 상태로 병원에 향한다. 그런 조각을 발견하고 강 박사는 아무런 의심 없이 그녀를 치료한다.</p></div>
             </div>
 
             <div class="scene-wrap dynamic-blur">
@@ -101,7 +125,7 @@
 
             <div class="scene-wrap dynamic-blur">
                 <img src="scene3-3.jpg" alt="장면 3-3">
-                <div class="text-box"><p>차가운 무기를 목에 겨눈 숨 막히는 대치 속에서, 두 사람의 기묘하고도 위태로운 인연이 시작된다.</p></div>
+                <div class="text-box"><p>차가운 무기를 목에 겨눈 숨 막히는 대치 속에서도, 강박사는 떨거나 두려워하는 기색 없이 자신은 그저 의무를 다했을 뿐이라 한다. 이렇게 두 사람의 기묘하고도 위태로운 인연이 시작된다.</p></div>
             </div>
         </section>
 
@@ -130,8 +154,13 @@
         </section>
     </main>
 
+    <footer style="text-align: center; padding: 60px 0 40px 0; font-size: 11px; color: #444; letter-spacing: 1px; font-family: 'Nanum Myeongjo', serif;">
+        사진 출처: 파과 스틸컷
+    </footer>
+
     <script>
         const brokenTitle = document.getElementById('brokenTitle');
+        const mainSubtitle = document.getElementById('mainSubtitle'); // 부제 이펙트 연동용 선언
         const topNav = document.querySelector('.top-nav');
         
         window.addEventListener('scroll', () => {
@@ -144,11 +173,13 @@
             brokenTitle.style.letterSpacing = `${ratio * 50}px`;
             brokenTitle.style.filter = `blur(${ratio * 10}px)`;
             
-            if (scrollPos > windowHeight * 0.3) {
-                topNav.classList.add('visible');
-            } else {
-                topNav.classList.remove('visible');
+            // 부제도 메인 타이틀과 싱크를 맞춰 자연스럽게 블러 및 페이드아웃 되도록 추가
+            if (mainSubtitle) {
+                mainSubtitle.style.opacity = 1 - ratio;
+                mainSubtitle.style.filter = `blur(${ratio * 4}px)`;
             }
+            
+            topNav.classList.add('visible');
         });
 
         const blurElements = document.querySelectorAll('.dynamic-blur');
